@@ -10,6 +10,7 @@ import AnimeDescPage from './components/pageComponents/AnimeDescPage'
 import RecentAnimePlayer from './components/pageComponents/RecentAnimePlayer'
 import AnimePlayer from './components/pageComponents/AnimePlayer'
 import MangaHome from './components/manga_comps/MangaHome'
+import MangaHome2 from './components/manga_comps/MangaHome2'
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
     },
     {
       path:"/manga",
-      element:<MangaHome/>
+      element:<MangaHome2/>
     },
     {
       path:"/anime/:title",

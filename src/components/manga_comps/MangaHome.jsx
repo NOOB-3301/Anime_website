@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import axios from 'axios';
 
-// const manga_url = 'https://animeapi-xi.vercel.app/manga/mangahere/'
 
-const manga_url = "https://animeapi-xi.vercel.app/manga/mangadex/"
+const imageUrl = "http://fmcdn.mangahere.com/store/manga/29763/cover.jpg?token=49d859d1a7e0fb608afbe397b89d8c9b714315dc&ttl=1724151600&v=1723854424";
+const referer = "http://www.mangahere.cc";
+const manga_url = 'https://animeapi-xi.vercel.app/manga/mangahere/'
+
+// const manga_img_url = "https://animeapi-xi.vercel.app/manga/mangadex/"
 
 function MangaHome() {
 
@@ -18,7 +21,37 @@ function MangaHome() {
     const res = await axios.get(full_url)
     console.log(res.data.results)
     setManga_res_arr(res.data.results)
+    
   }
+
+  const fetchImageWithReferer = async (url, referer) => {
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'Referer': referer
+        },
+        responseType: 'blob' // Important for handling image data
+      });      
+      const imageObjectURL = URL.createObjectURL(response.data);
+      return imageObjectURL;
+    } catch (error) {
+      console.error('There was a problem with the axios operation:', error);
+      throw error; // Optionally rethrow the error if needed
+    }
+  };
+
+
+  useEffect(() => {
+    fetchImageWithReferer(imageUrl, referer)
+    .then(imageObjectURL => {
+      console.log('Image URL:', imageObjectURL);
+      // Use imageObjectURL for an <img> element, etc.
+    })
+    .catch(error => {
+      console.error('Error fetching image:', error);
+    })
+  }, [])
+  
 
   // async function fetch_img(url,query,index) {
   //   let full_img_url = `${url}${query}`
@@ -57,8 +90,10 @@ function MangaHome() {
             manga_res_arr.length > 0 ? (
               manga_res_arr.map((manga,index)=>(
                 <div key={index}>
-                  <img src={manga.image}  />
+                  {/* <img src={manga.image}  /> */}
                   {manga.title}
+                  
+                  
                 </div>
               ))
             ):(
