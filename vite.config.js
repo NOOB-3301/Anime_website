@@ -7,9 +7,13 @@ export default defineConfig({
     proxy:{
       '/api/manga' : {
         target:'https://api.mangadex.org',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/manga/, '')
       },
       '/manga-cover':{
         target:'https://anime-website-gamma.vercel.app/mangauploads.mangadex.org',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/manga-cover/, '')
       }
     },
   },
