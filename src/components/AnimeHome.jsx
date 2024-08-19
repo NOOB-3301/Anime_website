@@ -14,6 +14,7 @@ function AnimeHome() {
     const [inputValue, setInputValue] = useState('');
     const [titles, setTitles] = useState([]);
     const [recentTitle, setRecentTitles] = useState([])
+    const [searched, setSearched] = useState(false)
 
     async function fetchStreamingLink(url,epid) {
         let x= url + epid
@@ -25,6 +26,7 @@ function AnimeHome() {
         e.preventDefault();
         alert(`Submitted value: ${inputValue}`);
         await fetchAnime(url, inputValue, setTitles);
+        setSearched(true)
     };
 
     async function fetchRecentAnime(url) {
@@ -87,7 +89,7 @@ function AnimeHome() {
             {/* this is Search result */}
             <div className='flex justify-center'>
                 <div className='flex flex-wrap gap-4 justify-center'>
-                    {titles.length > 0 ? (
+                    {/* {titles.length > 0 ? (
                         titles.map((anime, index) => (
                             <div className='flex flex-col bg-white items-center justify-center p-4 rounded-md shadow-md' key={index}>
                                 <Link to={`/anime/${encodeURIComponent(anime.id)}`}>
@@ -98,10 +100,35 @@ function AnimeHome() {
                             </div>
                         ))
                     ) : (
+
+                        
                         <p className=' rounded-lg p-2 shadow-md'> <span className='text-red-400 font-bold'>Your Search</span> <span className='text-blue-400 font-bold'>Result Will appear Here</span> </p>
                         
-                    )}
+                    )}  */}
+                    {
+                        searched ? (
+                            titles.length > 0 ? (
+                                titles.map((anime, index)=> (
+                                    <div className='flex flex-col bg-white items-center justify-center p-4 rounded-md shadow-md' key={index}>
+                                    <Link to={`/anime/${encodeURIComponent(anime.id)}`}>
+                                    <img src={anime.image} width={200} alt="" />
+                                    <div>{anime.title}</div>
+                                    
+                                    </Link>
+                                    </div>
+                                ))
+                            ):(
+                                <div className=' p-2 text-purple-400 underline m-1 text-xl font-medium '>CHECK SPELLING.......</div>
+                            )
+                        ):(
+                            <p className=' rounded-lg p-2 shadow-md'> <span className='text-red-400 font-bold'>Your Search</span> <span className='text-blue-400 font-bold'>Result Will appear Here</span> </p>
+                        )
+                    }
                 </div>
+            </div>
+
+            <div>
+
             </div>
 
             {/* this is for recent episodes */}
