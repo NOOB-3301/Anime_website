@@ -118,7 +118,7 @@ function AnimeHome() {
                                     </div>
                                 ))
                             ):(
-                                <div className=' p-2 text-purple-400 underline m-1 text-xl font-medium '>CHECK SPELLING.......</div>
+                                <div className=' p-2 text-purple-400  m-1 text-xl font-medium '>CHECK SPELLING....... T_T</div>
                             )
                         ):(
                             <p className=' rounded-lg p-2 shadow-md'> <span className='text-red-400 font-bold'>Your Search</span> <span className='text-blue-400 font-bold'>Result Will appear Here</span> </p>

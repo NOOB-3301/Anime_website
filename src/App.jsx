@@ -6,10 +6,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
 import AnimeHome from './components/AnimeHome'
 import LightNHome from './components/LightNHome'
-import MangaHome from './components/MangaHome'
 import AnimeDescPage from './components/pageComponents/AnimeDescPage'
 import RecentAnimePlayer from './components/pageComponents/RecentAnimePlayer'
 import AnimePlayer from './components/pageComponents/AnimePlayer'
+import MangaHome from './components/manga_comps/MangaHome'
 
 
 function App() {
