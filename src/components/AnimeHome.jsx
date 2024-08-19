@@ -6,6 +6,10 @@ const url = "https://animeapi-xi.vercel.app/anime/gogoanime/";
 const recent_url = "https://animeapi-xi.vercel.app/anime/gogoanime/recent-episodes"
 const recent_url_watch = "https://animeapi-xi.vercel.app/anime/gogoanime/watch/"
 
+// const url = "https://cors.consumet.stream/animeapi-gbxe8g2dp-arka-basaks-projects.vercel.app/anime/gogoanime/";
+// const recent_url = "https://cors.consumet.stream/animeapi-gbxe8g2dp-arka-basaks-projects.vercel.app/anime/gogoanime/recent-episodes"
+// const recent_url_watch = "https://animeapi-gbxe8g2dp-arka-basaks-projects.vercel.app/anime/gogoanime/watch/"
+
 function AnimeHome() {
     const [inputValue, setInputValue] = useState('');
     const [titles, setTitles] = useState([]);
