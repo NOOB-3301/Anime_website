@@ -3,6 +3,16 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server:{
+    proxy:{
+      '/api/manga' : {
+        target:'https://api.mangadex.org',
+      },
+      '/manga-cover':{
+        target:'https://anime-website-gamma.vercel.app/mangauploads.mangadex.org',
+      }
+    },
+  },
   plugins: [react()],
 })
 
