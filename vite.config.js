@@ -3,12 +3,12 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server:{
-    proxy:{
-      '/aviv2/manga/info/' : 'https://express-img.vercel.app',
-      '/aviv2/manga/cover/': 'https://express-img.vercel.app/'
-    },
-  },
+  // server:{
+  //   proxy:{
+  //     '/aviv2/manga/info/' : 'https://express-img.vercel.app',
+  //     '/aviv2/manga/cover/': 'https://express-img.vercel.app/'
+  //   },
+  // },
   plugins: [react()],
 })
 
