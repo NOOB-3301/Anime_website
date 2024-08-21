@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const info_url = "/aviv2/manga/info/"
+const info_url = "https://express-img.vercel.app/aviv2/manga/info/"
 
 
 
