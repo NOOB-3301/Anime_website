@@ -1,7 +1,7 @@
 {
     "rewrites": [
       { "source": "/(.*)", "destination": "/" },
-      {"source": "/aviv2/(.*)", "destination":"https://express-img.vercel.app/$1"}
+      {"source": "/aviv2/:path(.*)", "destination":"https://express-img.vercel.app/aviv2/:path"}
     ]
   }
  
