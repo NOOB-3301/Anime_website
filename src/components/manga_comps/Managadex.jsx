@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
+
+
 const mnaga_fetch_url_base = "aviv2/manga/info/"
 const manga_cover_url =  '/aviv2/manga/cover/'
 
