@@ -23,7 +23,7 @@ function Mangadex() {
     let full = `${url}${query}`
     let resp = await axios.get(full)
     console.log(full)
-    console.log(resp.data)
+    console.log(resp)
     setMangaList(resp.data.data)
     console.log(resp.data.data)
     console.log(resp.data.data[0].id)
