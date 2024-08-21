@@ -5,7 +5,12 @@
           {
             "source": "/(.*)", 
             "destination": "/" 
+          },
+          {
+            "source":"/manga",
+            "destination":"/aviv2/manga/info/"
           }
+
       
     ]
   }
