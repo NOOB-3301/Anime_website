@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      '/aviv2/manga/info/' : 'https://express-img.vercel.app/',
+      '/aviv2/manga/info/' : 'https://express-img.vercel.app',
       '/aviv2/manga/cover/': 'https://express-img.vercel.app/'
     },
   },
