@@ -2,10 +2,7 @@
 
   {
     "rewrites": [
-      {
-        "source": "/(.*)", 
-        "destination": "/" 
-      },
+
       {
         "source": "/aviv2/manga/info/:query",
         "destination": "https://express-img.vercel.app/api/manga/info/:query"
