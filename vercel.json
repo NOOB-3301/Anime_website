@@ -5,14 +5,6 @@
       {
         "source": "/(.*)", 
         "destination": "/" 
-      },
-      {
-        "source": "https://anime-website-gamma.vercel.app/manga/aviv2/manga/info/:query",
-        "destination": "https://express-img.vercel.app/api/manga/info/:query"
-      },
-      {
-        "source": "/aviv2/manga/cover/:manga_id",
-        "destination": "https://express-img.vercel.app/api/manga/cover/:manga_id"
       }
     ]
   }
