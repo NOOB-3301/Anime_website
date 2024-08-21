@@ -1,7 +1,19 @@
-{
+
+
+  {
     "rewrites": [
-      { "source": "/(.*)", "destination": "/" },
-      {"source": "/aviv2/:path(.*)", "destination":"https://express-img.vercel.app/aviv2/:path"}
+      {
+        "source": "/(.*)", 
+        "destination": "/" 
+      },
+      {
+        "source": "/aviv2/manga/info/:query",
+        "destination": "https://express-img.vercel.app/api/manga/info/:query"
+      },
+      {
+        "source": "/aviv2/manga/cover/:manga_id",
+        "destination": "https://express-img.vercel.app/api/manga/cover/:manga_id"
+      }
     ]
   }
  
