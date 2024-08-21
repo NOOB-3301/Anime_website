@@ -10,6 +10,7 @@ function Mangadex() {
       const response = await axios.get(url, { responseType: 'blob' });
       const imageObjectURL = URL.createObjectURL(response.data);
       document.getElementById('manga-image').src = imageObjectURL;
+      console.log("fetching")
     } catch (error) {
       console.error('Error fetching the image', error);
     }
