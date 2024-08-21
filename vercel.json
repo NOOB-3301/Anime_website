@@ -7,8 +7,8 @@
             "destination": "/" 
           },
           {
-            "source":"/manga",
-            "destination":"/aviv2/manga/info/"
+            "source":"https://express-img.vercel.app/aviv2/manga/info/:query",
+            "destination":"https://express-img.vercel.app/aviv2/manga/info/:query"
           }
 
       
