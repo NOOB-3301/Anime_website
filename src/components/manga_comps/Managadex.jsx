@@ -71,15 +71,6 @@ function Mangadex() {
         Manga List
       </div>
 
-      {
-        mangaList.map((manga, index)=>(
-          <div key={index}>
-            {manga.attributes.title.en}
-            the id is : {manga.id}
-            <button onClick={()=>manga_cover(manga_cover_url, manga.id)}>Fetch cover details</button>
-          </div>
-        ))
-      }
 
 
     </>
