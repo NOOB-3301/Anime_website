@@ -13,6 +13,7 @@
     "@consumet/extensions": "^1.7.0",
     "axios": "^1.7.4",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
     "framer-motion": "^11.3.28",
     "mangadex-full-api": "^6.0.0",
     "novel-cool": "^2.0.0",
