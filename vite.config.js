@@ -5,16 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      '/api/manga' : {
-        target:'https://api.mangadex.org',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/manga/, '')
-      },
-      '/manga-cover':{
-        target:'https://anime-website-gamma.vercel.app/mangauploads.mangadex.org',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/manga-cover/, '')
-      }
+      '/aviv2/manga/info/' : 'https://express-img.vercel.app/',
+      '/aviv2/manga/cover/': 'https://express-img.vercel.app/'
     },
   },
   plugins: [react()],
