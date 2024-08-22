@@ -20,17 +20,33 @@ function MangaDesc() {
     }
   }
 
+  // async function fetch_cover_image(id, file) {
+  //   if (file) {
+  //     let full = `${img_url}${id}/${file}`;
+  //     try {
+  //       const resp = await axios.get(full);
+  //       console.log(resp.data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch cover image:", error);
+  //     }
+  //   }
+  // }
+
   async function fetch_cover_image(id, file) {
     if (file) {
-      let full = `${img_url}${id}/${file}`;
-      try {
-        const resp = await axios.get(full);
-        console.log(resp);
-      } catch (error) {
-        console.error("Failed to fetch cover image:", error);
-      }
+        let full = `${img_url}${id}/${file}`;
+        try {
+            const resp = await axios.get(full, {
+                responseType: 'blob', // Ensure the image is received as a blob
+            });
+            const imageBlob = resp.data;
+            const imageObjectURL = URL.createObjectURL(imageBlob);
+            setImageUrl(imageObjectURL);
+        } catch (error) {
+            console.error("Failed to fetch cover image:", error);
+        }
     }
-  }
+}
 
   useEffect(() => {
     fetch_cover(cover_url, manga_id);
