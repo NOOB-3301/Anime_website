@@ -14,7 +14,7 @@ function Mangadex22() {
     let full = `${url}${query}`
     const resp = await axios.get(full)
     console.log(resp.data)
-    setMangaList(resp.data)
+    setMangaList(resp.data.data)
   }
 
   const handleSubmit = async (e) => {
