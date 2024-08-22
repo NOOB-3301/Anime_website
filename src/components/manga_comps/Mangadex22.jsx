@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState,useEffect } from 'react'
+import { Link } from 'react-router-dom'
 const info_url = "/aviv2/manga/info/"
 
 
@@ -25,12 +26,7 @@ function Mangadex22() {
     return 
   }
 
-  async function fetch_cover(url,query) {
-    let full = `${url}${query}`
-    const resp = await axios.get(full)
-    console.log(resp.data.data)
-    setMangaCover(resp.data.data)
-  }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,7 +66,11 @@ function Mangadex22() {
 
       {
         mangaList.map((manga,index)=>(
+          <Link to={`desc/${manga.id}`}>
+
           <h1 key={index}>{manga.attributes.title.en}</h1>
+          
+          </Link>
         ))
       }
 
