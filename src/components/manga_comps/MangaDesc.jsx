@@ -12,18 +12,26 @@ function MangaDesc() {
 
   async function fetch_cover(url, query) {
     let full = `${url}${query}`;
-    try {
-      const resp = await axios.get(full);
-      console.log(resp.data.data);
+    const resp = await axios.get(full);
+    console.log(resp.data.data);
 
-      if (resp.data.data.length > 0) {
-        const fetchedFileName = resp.data.data[0].attributes.fileName;
-        setFileName(fetchedFileName);
-      }
-    } catch (error) {
-      console.error("Failed to fetch cover data:", error);
+    if (resp.data.data.length > 0) {
+      const fetchedFileName = resp.data.data[0].attributes.fileName;
+      setFileName(fetchedFileName);
     }
   }
+
+  // async function fetch_cover_image(id, file) {
+  //   if (file) {
+  //     let full = `${img_url}${id}/${file}`;
+  //     try {
+  //       const resp = await axios.get(full);
+  //       console.log(resp.data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch cover image:", error);
+  //     }
+  //   }
+  // }
 
   async function fetch_cover_image(id, file) {
     if (file) {
@@ -41,7 +49,6 @@ function MangaDesc() {
     }
 }
 
-
   useEffect(() => {
     fetch_cover(cover_url, manga_id);
   }, [manga_id]);
@@ -52,9 +59,8 @@ function MangaDesc() {
 
   return (
     <div>
-      <p>This is manga description {manga_id}</p>
-      <p>File name: {fileName}</p>
-      {imageUrl && <img src={imageUrl} alt="Manga Cover" />}
+      This is manga description {manga_id}
+      and file name {fileName}
     </div>
   );
 }
