@@ -21,8 +21,8 @@ function MangaDesc() {
       console.log(resp.data.data[0].attributes.fileName)
     }
 
-    async function fetch_cover_image(url,id,file) {
-      let full = `${url}/${id}/${file}`
+    async function fetch_cover_image(id,file) {
+      let full = `/avi2/manga/image//${id}/${file}`
       const resp = await axios.get(full)
       console.log(resp)
     }
@@ -30,8 +30,13 @@ function MangaDesc() {
 
     useEffect(() => {
       fetch_cover(cover_url,manga_id)
-      fetch_cover_image(img_url, manga_id, fileName)
+      // fetch_cover_image(manga_id, fileName)
     }, [])
+
+    useEffect(() => {
+      fetch_cover_image(manga_id, fileName)
+    }, [])
+    
     
 
 
