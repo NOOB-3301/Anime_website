@@ -8,7 +8,7 @@
           },
           {
             "source":"/aviv2/manga/info/:query",
-            "destination":"https:/google.com/:query"
+            "destination":"https://google.com/:query"
           }
 
       
