@@ -20,7 +20,7 @@
           },
           {
             "source": "/avi2/manga/image/:id/:file",
-            "destination":"https://express-img.vercel.app/avi2/manga/image/:id/:file"
+            "destination":"https://express-img.vercel.app/aviv2/manga/image/:id/:file"
           }
 
       
