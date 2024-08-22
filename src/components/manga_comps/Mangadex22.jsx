@@ -9,6 +9,7 @@ function Mangadex22() {
 
   const [inputvalue, setInputValue] = useState('')
   const [mangaList, setMangaList] = useState([])
+  const [mangaCover,setMangaCover] = useState([])
 
   async function fetch_info(url,query) {
     let full = `${url}${query}`
@@ -17,12 +18,37 @@ function Mangadex22() {
     setMangaList(resp.data.data)
   }
 
+  async function fetch_info_cover(url,query) {
+    let full = `${url}${query}`
+    const resp = await axios.get(full)
+    console.log(resp.data)
+    return 
+  }
+
+  async function fetch_cover(url,query) {
+    let full = `${url}${query}`
+    const resp = await axios.get(full)
+    console.log(resp.data.data)
+    setMangaCover(resp.data.data)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     alert(`Submitted value: ${inputvalue}`);
     await fetch_info(info_url, inputvalue)
 
   };
+
+  useEffect( () => {
+    mangaList.map(async (manga,index)=>{
+    await fetch_cover(url,manga.id)
+    })  
+  
+    return () => {
+      second
+    }
+  }, [third])
+  
 
   return (
     <>

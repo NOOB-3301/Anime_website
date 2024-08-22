@@ -13,6 +13,10 @@
           {
             "source": "/manga",
             "destination":"/"
+          },
+          {
+            "source": "/aviv2/manga/cover/:manga_id",
+            "destination": "https://express-img.vercel.app/aviv2/manga/cover/:manga_id"
           }
 
       
