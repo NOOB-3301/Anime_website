@@ -44,10 +44,7 @@ function Mangadex22() {
     await fetch_cover(url,manga.id)
     })  
   
-    return () => {
-      second
-    }
-  }, [third])
+  }, [mangaList])
   
 
   return (
